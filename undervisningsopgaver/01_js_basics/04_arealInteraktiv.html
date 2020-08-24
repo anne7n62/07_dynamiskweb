@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <p>Hvad er længden?</p>
+    <input type="text" id="længde">
+    <p>Hvad er bredden?</p>
+    <input type="text" id="bredde">
+    <button>Klik og beregn arealet, kig i konsollen!</button>
+
+    <script>
+        document.querySelector("button").addEventListener("click", buttonClicked);
+
+        function buttonClicked() {
+            let længde = document.querySelector("#længde").value;
+            let bredde = document.querySelector("#bredde").value;
+            let areal = længde * bredde;
+            let resultat = `Længden er ${længde} og bredden er ${bredde}. Arealet er ${areal}`;
+            console.log(resultat);
+
+        }
+
+
+
+
+        /*
+
+
+        // Hvis arealet er under 100, skal der stå: Arealet er for lille
+        // Er arealet mellem 100 og 200, skal der stå: Arealet er ok
+        // Er det større end (eller lig med)  200, skal der stå: Arealet er for stort
+
+        if (areal < 100) {
+            resultat = "arealet er for lille";
+        } else if (areal < 200) {
+            resultat = "arealet er ok";
+        } else {
+            resultat = "arealet er for stort";
+        }
+
+
+
+
+        document.querySelector("button").addEventListener("click", buttonClicked);
+
+        function buttonClicked() {
+            let brugerNavn = document.querySelector("#navn").value;
+            console.log(`Tillykke dit navn er ${brugerNavn}`);
+        }*/
+    </script>
+</body></html>
