@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <script>
+        let antal = 60;
+        let co2 = 109;
+        let udslip = antal * co2;
+        let resultat;
+
+
+        if (udslip < 100) {
+            resultat = `Du har fløjet ${antal} timer og udledt ${udslip} kg CO2. Tæt på Thunberg;`
+
+        } else if (udslip < 200) {
+            resultat = `Du har fløjet ${antal} timer og udledt ${udslip} kg CO2. Ja ja, du behøver ikke at melde dig ud af Å!;`
+
+        } else if (udslip < 600) {
+            resultat = `Du har fløjet ${antal} timer og udledt ${udslip} kg CO2. Det er godt for turismen i nordeuropa`
+
+        } else {
+            resultat = `Du har fløjet ${antal} timer og udledt ${udslip} kg CO2. Nå ja vi kan jo altid kolonisere en anden planet..;`
+        }
+
+        console.log(resultat);
+    </script>
+</body></html>
