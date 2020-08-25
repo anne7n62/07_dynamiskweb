@@ -1,0 +1,21 @@
+*{border-box: none;}
+
+header {text-align: center;
+border: 1px solid black;}
+
+section {
+
+    display: flex;
+        margin: 0px 50px;
+
+}
+
+
+article {
+    flex-grow: 400px;
+    flex-basis: 1;
+    border: 1px solid black;
+}
+
+footer {text-align: center;
+border: 1px solid black;}
