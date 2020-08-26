@@ -16,9 +16,11 @@
        <h2>Undertitel</h2>
        <article> <img src="https://placeimg.com/400/300/any" alt="">
         <h3>Article 1</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis odit accusantium dolore numquam ut sit, reprehenderit ratione, est inventore nam delectus. Dolorum officiis nesciunt rem tenetur, voluptates est? Nobis nemo, iusto quaerat ipsum molestias architecto illum, quisquam, sapiente nulla amet eveniet, neque veniam laborum ullam non aliquid sit temporibus quo asperiores iste. Enim amet, molestias quam cupiditate nesciunt id, facere, atque dolorem quas </p></article> <article> <img src="https://placeimg.com/400/300/any" alt="">
-        <h3>Article 1</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis odit accusantium dolore numquam ut sit, reprehenderit ratione, est inventore nam delectus. Dolorum officiis nesciunt rem tenetur, voluptates est? Nobis nemo, iusto quaerat ipsum molestias architecto illum, quisquam, sapiente nulla amet eveniet, neque veniam laborum ullam non aliquid sit temporibus quo asperiores iste. Enim amet, molestias quam cupiditate nesciunt id, facere, atque dolorem quas </p></article></section>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis odit accusantium dolore numquam ut sit, reprehenderit ratione, est inventore nam delectus. Dolorum officiis nesciunt rem tenetur, voluptates est? Nobis nemo, iusto quaerat ipsum molestias architecto illum, quisquam, sapiente nulla amet eveniet, neque veniam laborum ullam non aliquid sit temporibus quo asperiores iste. Enim amet, molestias quam cupiditate nesciunt id, facere, atque dolorem quas </p></article>
+
+        <article> <img src="https://placeimg.com/400/300/any" alt="">
+        <h3>Article nummer 2</h3>
+        <p>tre store hunde </p></article></section>
 <footer><p>This is the footer</p></footer>
 
     <script>
@@ -40,9 +42,13 @@
         console.log(undertitel.textContent);
 
         // peg på h3
-        const h3 =  document.querySelector("h3");
-        h3.textContent;
-        console.log(h3.textContent);
+        const article =  document.querySelector("h3");
+        article.textContent;
+        console.log(article.textContent);
+
+        //peg på anden h3
+        const article2 = document.querySelector("article:nth-child(3) h3");
+        console.log(article2.textContent);
 
          //peg på footer
         const footer =  document.querySelector("footer");
