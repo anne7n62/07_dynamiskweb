@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<article></article>
+
+    <script>
+        let dyr = {
+            "navn": "Gris",
+            "type": "Pattedyr",
+            "levested": "svinesti",
+            "billede": "http://mabe-kea.dk/E19/pics/pig.png"
+        }
+
+        //her får vi placeret vores elementer i artcle tagget i vores DOM
+
+ let article = document.querySelector("article");
+
+            console.log(dyr);
+            article.innerHTML = `<img src=${dyr.billede}><p>Navn: ${dyr.navn} Type: ${dyr.type} Levested: ${dyr.levested} </p>`;
+    </script>
+</body>
+
+</html>
