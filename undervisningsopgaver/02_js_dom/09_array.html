@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <ul id="display"> </ul>
+
+
+    <script>
+        // laver array, der hedder playlist og en liste med "sangtitler"
+        const playlist = ["hej", "med", "dig", "fedt", "hey"];
+
+        //forEach - vi loope gennem arrayet playlist
+        playlist.forEach(tracks => {
+            // her vil vi ændre #display's inner html og tilføje vores sangtekert.
+            //Tracksne vil overskrive hinanden, hvis man ikke laver +=
+            document.querySelector("#display").innerHTML += `${tracks} <br>`;
+        })
+
+    </script>
+</body>
+
+</html>
