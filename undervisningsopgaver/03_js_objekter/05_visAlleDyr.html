@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<article></article>
+
+    <script>
+         let dyr = [{
+            "navn": "Gris",
+            "type": "Pattedyr",
+            "levested": "svinesti"
+        }, {
+            "navn": "Ko",
+            "type": "Pattedyr",
+            "levested": "stald"
+        }, {
+            "navn": "Hugorm",
+            "type": "krybdyr",
+            "levested": "skoven"
+        }]
+
+       let elm = document.querySelector("article");
+        //løb igennem array "dyr"
+        dyr.forEach(etDyr=>{
+            console.log(etDyr.navn);
+            elm.innerHTML += `<p>Navn: ${etDyr.navn} Type: ${etDyr.type} </p>`;
+        })
+    </script>
+</body>
+
+</html>
