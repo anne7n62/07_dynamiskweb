@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    * {
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    #h1 {
+        display: flex;
+        justify-content: center;
+        background-color: #4883ee;
+        font-size: 12px;
+    }
+
+    h1 {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 2em;
+        margin: 20px 0px 5px 0px;
+        text-transform: uppercase;
+        color: white;
+    }
+
+    h2 {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1em;
+        line-height: 2em;
+    }
+
+    img {
+        max-width: 100%;
+        border-radius: 5px;
+    }
+
+    #liste {
+        width: 90vw;
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    .menu {
+        /*border: black solid 0.1em;*/
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: #e6e4d3;
+        border-radius: 5px;
+        box-shadow: 2px 3px black;
+
+    }
+
+    .red {
+        color: white;
+        background-color: black;
+        border: 0.2em solid black;
+        box-shadow: none;
+    }
+
+    /****************SPLASH, HEADER og KNAPPER**************/
+
+    #splash {
+        width: 100vw;
+        height: 20vw;
+        background-image: url(imgs/splash2.jpg);
+        background-size: cover;
+        /* background-position: 14% 15%;*/
+        max-width: none;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+        padding: 5px 0px 30px 0px;
+        background-color: #4883ee;
+        margin-bottom: 30px;
+    }
+
+    button {
+        padding: 1.35em 2.2em;
+        border: 0.2em solid white;
+        text-decoration: none;
+        font-weight: 400;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 10px;
+        color: black;
+        transition: all 0.2s;
+        box-shadow: 1px 2px black;
+        border-radius: 5px;
+        background-color: white;
+        margin: 0px 10px;
+    }
+
+    button:hover {
+        color: white;
+        background-color: black;
+        border: 0.2em solid black;
+        box-shadow: none;
+    }
+
+
+
+
+    /************POP UP***********/
+
+    #popop {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, .8);
+        cursor: pointer;
+        display: none;
+        overflow: scroll;
+    }
+
+    #popop_artikel {
+        position: fixed;
+        left: 28em;
+        top: 0em;
+        height: 80vh;
+        margin: 4rem auto;
+        border-radius: 10px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        width: 30vw;
+    }
+
+    #luk {
+        position: fixed;
+        top: 4em;
+        right: 24em;
+        background-color: white;
+        color: black;
+        border-radius: 5px;
+        padding: 0.8em 1em;
+        font-family: helvetica, "sans serif";
+        font-size: 1em;
+    }
+
+    @media (max-width: 600px) {
+
+
+        header {
+            display: flex;
+            flex-direction: column;
+        }
+
+        button {
+            padding: 1.35em 2.2em;
+
+            margin: 5px 50px;
+        }
+
+    }
+</style>
+
+<body>
+
+    <section id="popop">
+        <div id="popop_artikel">
+            <div id="luk">X</div>
+
+            <div class="popop_img">
+                <img src="" alt=""></div>
+
+            <div class="popop_kolonne">
+                <h2></h2>
+                <p>Pris: <span class="pris"></span></p>
+                <p>Beskrivelse: <span class="lang"></span></p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="splash"> </section>
+
+    <section id="h1">
+        <h1>menu</h1>
+    </section>
+
+    <header>
+        <button class="filter valgt" data-kategori="alle">Alle</button>
+        <button class="filter" data-kategori="forretter">Forret</button>
+        <button class="filter" data-kategori="hovedretter">Hovedret</button>
+        <button class="filter" data-kategori="desserter">Dessert</button>
+        <button class="filter" data-kategori="sideorders">Sideorders</button>
+        <button class="filter" data-kategori="drikkevarer">Drikkevarer</button>
+    </header>
+
+    <section id="liste">
+
+    </section>
+
+
+    <template>
+        <article class="menu">
+            <img src="" alt="">
+            <h2 class="navn"></h2>
+            <p class="kort"></p>
+            <p class="pris"></p>
+        </article>
+    </template>
+    <script>
+        //let container = document.querySelector("section");
+        //let temp = document.querySelector("template");
+
+
+        let filter = "alle";
+        let retter;
+        document.addEventListener("DOMContentLoaded", loadJSON);
+        const popop = document.querySelector("#popop");
+
+        async function loadJSON() {
+            const JSONData = await fetch("https://spreadsheets.google.com/feeds/list/17Dd7DvkPaFamNUdUKlrFgnH6POvBJXac7qyiS6zNRw0/od6/public/values?alt=json");
+            retter = await JSONData.json();
+            addEventListenersToButtons();
+            visRetter();
+        }
+
+
+        function visRetter() {
+            const list = document.querySelector("#liste");
+            const menuTemplate = document.querySelector("template");
+            list.innerHTML = "";
+
+            retter.feed.entry.forEach(ret => {
+                if (filter == "alle" || filter == ret.gsx$kategori.$t.toLowerCase()) {
+                    let clone = menuTemplate.cloneNode(true).content;
+                    clone.querySelector(".navn").textContent = ret.gsx$navn.$t;
+                    clone.querySelector(".kort").textContent = ret.gsx$kort.$t;
+                    clone.querySelector(".pris").textContent = "Pris: " + ret.gsx$pris.$t + " kr.";
+                    clone.querySelector("img").src = "imgs/small/" + ret.gsx$billede.$t + "-sm.jpg";
+
+                    clone.querySelector("article").addEventListener("click", () => visDetaljer(ret));
+
+                    list.appendChild(clone);
+                    console.log(ret);
+
+                }
+            })
+        }
+
+        function visDetaljer(ret) {
+            console.log(ret);
+            popop.querySelector("h2").textContent = ret.gsx$navn.$t;
+            popop.querySelector("img").src = "imgs/small/" + ret.gsx$billede.$t + "-sm.jpg";
+            popop.querySelector(".pris").textContent = ret.gsx$pris.$t + " kr.";
+            popop.querySelector(".lang").textContent = ret.gsx$lang.$t;
+            popop.style.display = "block";
+
+        }
+
+
+        document.querySelector("#luk").addEventListener("click", () => popop.style.display = "none");
+
+        function addEventListenersToButtons() {
+            document.querySelectorAll(".filter").forEach((btn) => {
+                btn.addEventListener("click", filterBTNs);
+            });
+        }
+
+
+        function filterBTNs() {
+
+            filter = this.dataset.kategori;
+
+            document.querySelector("h1").textContent = this.textContent;
+
+            document.querySelectorAll(".filter").forEach((btn) => {
+                btn.classList.remove("valgt");
+                btn.classList.remove("valgt");
+
+
+            })
+            this.classList.add("valgt");
+            this.classList.add("red");
+
+
+            visRetter();
+        }
+    </script>
+
+</body></html>
