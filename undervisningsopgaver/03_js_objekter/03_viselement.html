@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <article id="dyr">
+        <h3></h3>
+        <img src="" alt="">
+        <p>Type:</p>
+        <p>Levested:</p>
+    </article>
+
+    <script>
+        let dyr = {
+            "navn": "Gris",
+            "type": "Pattedyr",
+            "levested": "svinesti",
+            "billede": "http://mabe-kea.dk/E19/pics/pig.png"
+        }
+
+        //her får vi placeret vores elementer i artcle tagget i vores DOM
+
+        const destination = document.querySelector("#dyr");
+        destination.querySelector("h3").textContent = dyr.navn;
+        destination.querySelector("p").textContent = dyr.levested;
+        destination.querySelector("img").src = dyr.billede;
+
+    </script>
+</body>
+
+</html>
