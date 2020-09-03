@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<style>
+    img {width: 100%;
+    height: 60%;
+    object-fit: contain;}
+
+    #detalje {
+        position:fixed;
+        width: 100vw;
+        height: 100vh;
+        top:0;
+        left: 0;
+        background-color: rgba(0,0,0,.8);
+        overflow: scroll;
+    }
+
+    #detalje #luk {
+        position:fixed;
+        top:0;
+        left:0;
+        font-size: 4rem;
+        margin:1em;
+        cursor:pointer;
+    }
+
+    #detalje .person {
+        width: 60vw;
+        min-height: 50vh;
+        margin: auto;
+        padding: 4rem;
+        background: white;
+    }
+
+</style>
+
+<body>
+
+
+
+    <section id="detalje">
+       <button id="luk">x</button>
+
+        <article class="person">
+            <h2 class="navn">Navn:</h2>
+
+                <img src="" alt="">
+        </article>
+    </section>
+
+
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+
+        let personer;
+        document.addEventListener("DOMContentLoaded", loadJSON);
+        const popop = document.querySelector("#popop");
+
+        async function loadJSON() {
+            const JSONData = await fetch("https://spreadsheets.google.com/feeds/list/1mtHhpoEkYqVqr1TSnKQ1_sQZWI7FRVjcw3H1oatDOVQ/od6/public/values?alt=json");
+            personer = await JSONData.json();
+            addEventListenersToButtons();
+            visPersoner();
+        }
+
+        function visPersoner() {
+            const templatePointer = document.querySelector("template");
+            const listPointer = document.querySelector("#liste");
+            listPointer.innerHTML = "";
+            personer.feed.entry.forEach(person => {
+                    if (id == person.gsx$id.$t) {
+                        visDetaljer (person)
+                    }
+
+            })
+        }
+
+       function visDetaljer(person) {
+           console.log(person);
+            popop.querySelector("h2").textContent = person.gsx$navn.$t;
+            popop.querySelector("h2").textContent += " " + person.gsx$navn.$t;
+            popop.querySelector("img").src = person.gsx$billede.$t;
+            popop.querySelector(".alder").textContent = person.gsx$alder.$t;
+            popop.querySelector(".religion").textContent = person.gsx$religion.$t;
+           popop.style.display="block";
+
+        }
+
+        document.querySelector("#luk").addEventListener("click", ()=>history.back());
+
+
+    </script>
+
+</body></html>
