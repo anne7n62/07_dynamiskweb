@@ -20,14 +20,61 @@
     padding: 0;
 }
 
+h1 {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 2rem;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+}
+
+p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+}
+
 /************   2. HEADER OG FOOTER  **************/
+
+/*** header *********************/
 
 .hidden {
     opacity: 0;
     transform: translateX(-100%);
 }
 
-/*** FOOTER *********************/
+#menuknap {
+    height: 0em;
+    margin: 1px 15px;
+    font-size: 3rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+#menu {
+    list-style-type: none;
+    transition: transform 0.3s;
+    transform-origin: top left;
+    height: 50vh;
+    width: 100vw;
+}
+
+#menu.hidden {
+    height: 0px;
+}
+
+#menu a {
+    text-decoration: none;
+    font-size: 3em;
+    font-weight: 300;
+}
+
+
+
+/*** Footer *********************/
 
 footer {
     background: yellow;
