@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMAG kbh</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Dette er vores header med nav/burgermenu -->
+    <header>
+        <div class="header_logo"></div>
+        <nav>
+            <div id="menuknap">☰</div>
+            <ul id="menu" class="hidden">
+                <li><a href="index.html">startside</a></li>
+                <li><a href="udforsk.html">udforsk</a></li>
+                <li><a href="om.html">om</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  <!--- Dette er templaten til vores popupvindue -->
+    <section id="popop">
+        <div id="popop_artikel">
+            <div id="luk">X</div>
+
+            <div class="popop_img">
+                <img src="" alt=""></div>
+
+            <div class="popop_kolonne">
+                <h2 class="navn"></h2>
+                <p class="lang"></p>
+            </div>
+        </div>
+    </section>
+
+   <!-- Dette er vores top sektion med knapper -->
+        <section id="h1">
+        <h1>Hvor vil du spise?</h1>
+    </section>
+
+    <header>
+        <button class="filter valgt" data-kategori="alle">Alle</button>
+        <button class="filter" data-kategori="">Nørrebro</button>
+        <button class="filter" data-kategori="">Vesterbro</button>
+        <button class="filter" data-kategori="">Indre by</button>
+        <button class="filter" data-kategori="">Østerbro</button>
+        <button class="filter" data-kategori="">Frederiksberg</button>
+    </header>
+
+    <section id="liste">
+</section>
+
+<!--- Dette er template til de forkellige caféer i listeview -->
+    <template>
+        <article class="menu">
+            <img src="" alt="">
+            <h2 class="navn"></h2>
+            <p class="kort"></p>
+        </article>
+    </template>
+
+
+<!---- Her er vores footer -->
+    <footer>
+        <p>SMAG KBH</p>
+        <p>Adresse</p>
+    </footer>
+
+
+    <script src="burgermenu.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

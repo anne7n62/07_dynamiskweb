@@ -1,0 +1,77 @@
+/************   INDHOLDSFORTEGNELSE  **************/
+/************   1. GENERELT  **********************/
+/************   2. HEADER OG FOOTER  **************/
+/************   3. FORSIDE  ***********************/
+/************   4. UDFORSK ************************/
+/************   5. POP OP *************************/
+/************   6. OM      ************************/
+/************   7. MEDIA  Q  **********************/
+
+
+
+
+
+
+/************   1. GENERELT  **********************/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/************   2. HEADER OG FOOTER  **************/
+
+.hidden {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+/*** FOOTER *********************/
+
+footer {
+    background: yellow;
+}
+
+/************   3. FORSIDE  ***********************/
+
+/**********s**   4. UDFORSK ************************/
+
+#liste {
+    width: 90vw;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+/************   5. POP OP *************************/
+
+/************   6. OM      ************************/
+
+/************   7. MEDIA  Q  **********************/
+
+@media (min-width: 600px) {
+
+    #menuknap {
+        display: none;
+    }
+
+    #menu.hidden {
+        transform: translateX(0);
+        opacity: 1;
+        height: 3em;
+        text-align: right;
+        overflow: hidden;
+        padding-top: 10px;
+
+    }
+
+    #menu li {
+        display: inline-block;
+    }
+
+    #menu a {
+        text-decoration: none;
+    }
