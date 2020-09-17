@@ -10,33 +10,87 @@
 </head>
 
 <body>
-    <!-- Dette er vores header med nav/burgermenu -->
+
+
+    <!----HEADER----->
+
     <header>
-        <div class="header_logo"></div>
-        <nav>
-            <div id="menuknap">☰</div>
-            <ul id="menu" class="hidden">
-                <li><a href="index.html">startside</a></li>
-                <li><a href="udforsk.html">udforsk</a></li>
-                <li><a href="om.html">om</a></li>
-            </ul>
-        </nav>
+        <section id="header">
+            <div class="logo" class="hidden">
+                <a href="index.html"> <img src="logo.svg" alt="logo"></a>
+            </div>
+
+
+            <!-----menu----->
+
+            <nav>
+                <div id="menuknap">☰</div>
+                <ul id="menu" class="hidden">
+                    <li><a href="index.html">START</a></li>
+                    <li><a href="udforsk.html">UDFORSK</a></li>
+                    <li><a href="om.html">OM OS</a></li>
+                </ul>
+            </nav>
+
+
+        </section>
     </header>
 
-    <section>
-        <!-- her er vores splashdiv, samt forsidetekst og knap videre til udforsk -->
-        <div id="splash">
-            <div class="forsidetekst">
-                <img src="" alt="logo">
-                <h2>De hyggeligste spisesteder i København til budgetvenlige priser.</h2>
-                <div class="udforsk"><a href="">Udforsk</a></div>
-            </div>
+    <!-- FORSIDE -->
+
+    <div id="splash">
+
+        <div class="whitebox">
+            <h1>SMAG kbh</h1>
+            <p>Københavns bedste og billigste <br> spisesteder samlet ét sted.</p>
+            <h2><a href="udforsk.html">Udforsk</a></h2>
+
         </div>
+    </div>
 
-        <h1>POPULÆRE STEDER</h1>
 
-        <!--Dette er destination for template-->
 
+
+
+    <!---populære steder---->
+
+    <!-- <section id="populaer">
+            <div class="sectionwrapper">
+                <div class="populaere_steder">
+
+                    <h1>Populære steder</h1>
+
+                </div>
+
+                <div class="billeder">
+                    <div class="col">
+                        <img src="billede.png" alt="cafe">
+                    </div>
+                    <div class="col">
+                        <img src="billede.png" alt="cafe">
+                    </div>
+                    <div class="col">
+                        <img src="billede.png" alt="cafe">
+                    </div>
+                    <div class="col">
+                        <img src="billede.png" alt="cafe">
+                    </div>
+                </div>
+            </div>
+        </section>-->
+
+
+
+
+
+
+
+
+    <section>
+
+
+
+        <!--Dette er destination for template
         <section class="populaer_container">
             <article class="populaer_article">
                 <div class="populaer_foto"></div>
@@ -45,17 +99,21 @@
             </article>
         </section>
 
+-->
+
 
     </section>
 
-<!---- Her er vores footer -->
+    </div>
+
+
+    <!---- Her er vores footer -->
     <footer>
         <p>SMAG KBH</p>
-        <p>Adresse</p>
+        <p>Fiolstræde 20</p>
+        <p>København</p>
     </footer>
 
 
     <script src="burgermenu.js"></script>
-</body>
-
-</html>
+</body></html>

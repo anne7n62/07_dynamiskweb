@@ -20,9 +20,10 @@
     padding: 0;
 }
 
+
 h1 {
     font-family: 'Abril Fatface', cursive;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 h2 {
@@ -34,6 +35,26 @@ p {
     font-family: 'Playfair Display', serif;
     font-size: 1rem;
 }
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sectionwrapper {
+    display: flex;
+    Flex-wrap: wrap;
+}
+
+.logo img {
+    width: 170px;
+    display: none;
+}
+
+/*
+.splash {
+    width: 0%;
+}*/
 
 /************   2. HEADER OG FOOTER  **************/
 
@@ -58,29 +79,73 @@ p {
     list-style-type: none;
     transition: transform 0.3s;
     transform-origin: top left;
-    height: 50vh;
+    height: 30vh;
     width: 100vw;
+    padding: 30px 15px;
 }
 
 #menu.hidden {
     height: 0px;
 }
 
+
 #menu a {
     text-decoration: none;
-    font-size: 3em;
+    font-size: 2em;
+    line-height: 2em;
     font-weight: 300;
+    color: black;
+    font-family: 'Playfair Display';
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 50px;
 }
 
-
+#menu a:hover {
+    color: #FFEE6E;
+}
 
 /*** Footer *********************/
 
 footer {
-    background: yellow;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    background-color: #FFEE6E;
 }
 
 /************   3. FORSIDE  ***********************/
+
+#splash {
+    width: 100vw;
+    height: 100vw;
+    background-image: url(splash.png);
+    background-size: cover;
+    background-position: 50% 0%;
+    margin-top: 70px;
+}
+
+.whitebox {
+    display: inline-block;
+    position: relative;
+    top: 100px;
+    background: white;
+    padding: 30px;
+    box-shadow: 1px 2px 6px rgba(0, 0, 0, .5);
+}
+
+.whitebox h1 {
+    color: #0046C1;
+    padding-bottom: 10px;
+}
+
+.whitebox p {
+    padding-bottom: 10px;
+}
+
+.whitebox a {
+    color: #0046C1;
+}
 
 /**********s**   4. UDFORSK ************************/
 
@@ -89,17 +154,156 @@ footer {
     max-width: 1100px;
     margin: 0 auto;
     display: grid;
-    grid-gap: 15px;
+    grid-gap: 20px;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    padding-bottom: 20px;
+}
+
+.undermenu {
+    text-align: center;
+    padding: 0% 5% 5% 5%;
+    margin-top: 70px;
+}
+
+.undermenu h1 {
+    margin-bottom: 20px;
+    color: #0046C1;
+}
+
+.cafe img {
+    object-fit: cover;
+    width: 100%;
+    overflow: hidden;
+}
+
+.kort {
+    padding-bottom: 10px;
+}
+
+.cafe {
+    background-color: #0046C1;
+    color: white;
+    text-align: center;
+}
+
+/************   buttons   *************************/
+button {
+    text-align: center;
+    display: inline-block;
+    font-size: 1.2rem;
+    font-family: 'Playfair Display';
+    padding: 0.4em 1em 0.5em 1em;
+    text-decoration: none;
+    transition: all 0.2s;
+    /*box-shadow: 1px 1px 2px rgba(0,0,0, .4);*/
+    background-color: white;
+    margin: 4px 4px;
+    border-radius: 1px;
+    border: 1px solid black;
+}
+
+button:hover {
+    color: white;
+    background-color: #0046C1;
+    border: none;
+    box-shadow: none;
+}
+
+.button a {
+    color: #0046C1;
+    text-decoration: none;
+}
+
+.valgtstyle {
+    color: white;
+    background-color: #0046C1;
+    border: none;
+    box-shadow: none;
 }
 
 /************   5. POP OP *************************/
 
+#popop {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, .8);
+    cursor: pointer;
+    display: none;
+    overflow: scroll;
+}
+
+#popop_artikel {
+    width: 80vw;
+    min-height: 80vh;
+    margin: 4rem auto;
+    background-color: white;
+}
+
+#luk {
+    position: fixed;
+    top: 2.9em;
+    right: 2.3em;
+    background-color: white;
+    color: black;
+    padding: 0.7em 1em;
+    font-family: arial, "sans serif";
+    font-size: 1.5em;
+    border-radius: 2px;
+}
+
+.popop_img img {
+    max-width: 80vw;
+}
+
+.popop_img {
+    max-height: 100%;
+
+}
+
+#popop h2 {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#popop p {
+
+    padding: 20px 60px 30px 20px;
+}
+
 /************   6. OM      ************************/
+.om_foto img {
+    width: 100%;
+    padding-bottom: 30px;
+    padding-top: 25px;
+}
+
+#om {
+    padding: 0px 50px;
+
+}
+
+#om h1 {
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 10px;
+    color: #0046C1;
+}
+
+#om p {
+    padding: 15px 0px 15px 0px;
+}
 
 /************   7. MEDIA  Q  **********************/
 
 @media (min-width: 600px) {
+/*media q for nav*/s
+    #menu {
+        padding: 0px 0px;
+    }
 
     #menuknap {
         display: none;
@@ -108,17 +312,141 @@ footer {
     #menu.hidden {
         transform: translateX(0);
         opacity: 1;
-        height: 3em;
-        text-align: right;
+        height: 2em;
         overflow: hidden;
         padding-top: 10px;
+        text-align: end;
+    }
 
+    nav {
+      position: absolute;
+        max-width: 100%;
     }
 
     #menu li {
-        display: inline-block;
+       display: inline-block;
     }
 
     #menu a {
         text-decoration: none;
+        margin-right: 60px;
+        margin-left: 0px;
+        font-size: 1.3em;
+        line-height: 1em;
+
+    }
+
+    #menu a:hover {
+        color: #0046C1;
+    }
+
+
+    #header {
+        display: flex;
+        padding: 10px 15px 2px 15px;
+        background-color: #FFEE6E;
+    }
+
+    /*media q på SPLASH*/
+
+    #splash {
+        height: 90vh;
+        background-position: 0% 0%;
+        margin-top: 0px;
+    }
+
+    .whitebox {
+        top: 150px;
+        left: 750px;
+        padding: 35px 60px 35px 35px;
+        box-shadow: 1px 2px 6px rgba(0, 0, 0, .5);
+    }
+
+    .logo img {
+        display: inline-block;
+    }
+
+    /*mediaq på UDFORSK */
+    .undermenu {
+        margin-top: 40px;
+    }
+
+
+    .navn {
+        padding: 10px 15px;
+    }
+
+    .kort {
+        padding: 0px 15px 15px 15px;
+    }
+
+    .cafe {
+        text-align: left;
+    }
+
+
+    /***media q pop op***/
+    #popop_artikel {
+        width: 80vw;
+        min-height: 60px;
+        margin: 6.6rem auto;
+        display: flex;
+    }
+
+    #luk {
+        position: fixed;
+        top: 4.5em;
+        right: 5.5em;
+    }
+
+    .popop_img img {
+        max-width: 40vw;
+    }
+
+    .popop_img {
+        max-height: 100%;
+    }
+
+    #popop h2 {
+        padding-bottom: 0px;
+        margin-left: 30px;
+    }
+
+    #popop p {
+        padding: 20px 75px 30px 20px;
+        margin-left: 30px;
+    }
+
+
+    /*flex på OM section*/
+    #om {
+        display: flex;
+    }
+
+    #om {
+        padding: 0px 0px;
+    }
+
+    #om .om_foto {
+        flex-grow: 1;
+    }
+
+    #om .om_tekst {
+        flex-grow: 2;
+        padding: 0px 50px;
+    }
+
+    .om_foto img {
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+
+    #om h1 {
+        text-align: center;
+        padding-top: 30px;
+    }
+
+    #om p {
+        text-align: center;
+        padding: 15px 0px 15px 0px;
     }

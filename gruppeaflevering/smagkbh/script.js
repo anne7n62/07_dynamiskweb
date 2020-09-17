@@ -39,7 +39,7 @@ function visSteder() {
           //det nye indhold bliver placeret
             clone.querySelector(".navn").textContent = sted.gsx$navn.$t;
             clone.querySelector(".kort").textContent = sted.gsx$kort.$t;
-           // clone.querySelector("img").src = "imgs/small/" + ret.gsx$billede.$t + "-sm.jpg";
+           clone.querySelector("img").src =  sted.gsx$billede.$t + ".jpg";
 
 
            //når der klikkes på vores article-tag kaldes funktionen visDetaljer
@@ -56,10 +56,9 @@ function visSteder() {
 function visDetaljer(sted) {
     console.log(sted);
     popop.querySelector("h2").textContent = sted.gsx$navn.$t;
-    //popop.querySelector("img").src = "imgs/small/" + ret.gsx$billede.$t + "-sm.jpg";
+    popop.querySelector("img").src = sted.gsx$billede.$t + ".jpg";
     popop.querySelector(".lang").textContent = sted.gsx$lang.$t;
     popop.style.display = "block";
-
 }
 
 
@@ -74,15 +73,18 @@ function addEventListenersToButtons() {
 }
 
 //funktion vælger hvilke data der skal vises når man trykke på knappen
+// tilføjer klassen valgt til den der trykkes på
 function filterBTNs() {
  filter = this.dataset.kategori;
 
     document.querySelector("h1").textContent = this.textContent;
 document.querySelectorAll(".filter").forEach((btn) => {
         btn.classList.remove("valgt");
+    btn.classList.remove("valgtstyle");
 })
 
     this.classList.add("valgt");
+    this.classList.add("valgtstyle");
 
     visSteder();
 }

@@ -11,16 +11,33 @@
 
 <body>
     <!-- Dette er vores header med nav/burgermenu -->
-    <header>
-        <div class="header_logo"></div>
-        <nav>
-            <div id="menuknap">☰</div>
-            <ul id="menu" class="hidden">
-                <li><a href="index.html">startside</a></li>
-                <li><a href="udforsk.html">udforsk</a></li>
-                <li><a href="om.html">om</a></li>
-            </ul>
-        </nav>
+<header>
+        <section id="header">
+
+            <!----logo----->
+            <div class="sectionwrapper">
+                <div class="logo" >
+                   <a href="index.html"> <img src="logo.svg" alt="logo"></a>
+                </div>
+            </div>
+
+
+
+            <!-----menu----->
+
+                <nav>
+                    <div id="menuknap">☰</div>
+                    <ul id="menu" class="hidden">
+                        <li><a href="index.html">START</a></li>
+                        <li><a href="udforsk.html">UDFORSK</a></li>
+                        <li><a href="om.html">OM OS</a></li>
+                    </ul>
+                </nav>
+
+
+
+
+        </section>
     </header>
 
   <!--- Dette er templaten til vores popupvindue -->
@@ -39,21 +56,23 @@
     </section>
 
    <!-- Dette er vores top sektion med knapper -->
-        <section id="h1">
-        <h1>Hvor vil du spise?</h1>
-    </section>
+       <div class="undermenu">
 
-    <header>
+        <h1>Hvor vil du spise?</h1>
+
+
         <button class="filter valgt" data-kategori="alle">Alle</button>
-        <button class="filter" data-kategori="">Nørrebro</button>
-        <button class="filter" data-kategori="">Vesterbro</button>
-        <button class="filter" data-kategori="">Indre by</button>
-        <button class="filter" data-kategori="">Østerbro</button>
-        <button class="filter" data-kategori="">Frederiksberg</button>
-    </header>
+        <button class="filter" data-kategori="nørrebro">Nørrebro</button>
+        <button class="filter" data-kategori="vesterbro">Vesterbro</button>
+        <button class="filter" data-kategori="indre">Indre by</button>
+        <button class="filter" data-kategori="østerbro">Østerbro</button>
+        <button class="filter" data-kategori="frederiksberg">Frederiksberg</button>
+    </div>
 
     <section id="liste">
 </section>
+
+
 
 <!--- Dette er template til de forkellige caféer i listeview -->
     <template>
@@ -66,9 +85,10 @@
 
 
 <!---- Her er vores footer -->
-    <footer>
+       <footer>
         <p>SMAG KBH</p>
-        <p>Adresse</p>
+        <p>Fiolstræde 20</p>
+        <p>København</p>
     </footer>
 
 
