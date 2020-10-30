@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<style>
+    
+    #map
+    
+</style>
+
+<body>
+
+    <div id="map"></div>
+
+
+    <script>
+        async function loadMap() {
+
+            //henter data fra svg
+            const mapdata = await fetch('kommuner.svg');
+            const map = await mapdata.text();
+            
+            document.querySelector("#map").innerHTML = map;
+
+            console.log({
+                mapsvg
+            }); //viser info når man sætter i tuborgklammer
+
+            
+
+        }
+
+        loadMap();
+    </script>
+</body></html>
